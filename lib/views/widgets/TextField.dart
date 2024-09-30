@@ -6,9 +6,19 @@ class Textfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: Color(  0xff62FCD7   ),
+      
       decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: )
+        border: buildBorder(),
+        enabledBorder: buildBorder(),
+        focusedBorder: buildBorder(Color(  0xff62FCD7   )),
       ),
     );
+  }
+
+  OutlineInputBorder buildBorder([color]) {
+    return OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(color: color ?? Colors.white));
   }
 }
