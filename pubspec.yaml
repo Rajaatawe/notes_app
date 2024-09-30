@@ -74,9 +74,9 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-      fonts:
-        - asset: lib/assets/fonts/fa-regular-400.ttf
+  # fonts:
+  #     fonts:
+  #       - asset: lib/assets/fonts/fa-regular-400.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

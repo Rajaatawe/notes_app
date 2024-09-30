@@ -13,7 +13,7 @@ class Notes extends StatelessWidget {
     return MaterialApp(
       
       theme: ThemeData(brightness: Brightness.dark,
-      // fontFamily: ,
+      //  fontFamily:'lib/assets/fonts/fa-regular-400.ttf' ,
       
       ),
       

@@ -5,21 +5,30 @@ class NoteItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-    decoration: BoxDecoration(
-      color: Colors.amber,
-      borderRadius: BorderRadius.circular(16 ),
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-      ListTile(
-        title: Text('Flutter tips',style: TextStyle(color: Colors.black),),
-        subtitle: Text('Build your career with tharwat samy',style:TextStyle(color: Colors.black)),
-        trailing: IconButton(onPressed: (){}, icon: Icon(Icons.delete,color: Colors.black,)),
+    return  Padding(
+      padding: const EdgeInsets.only(top: 24,bottom: 24,left: 16),
+      child: Container(
+      decoration: BoxDecoration(
+        color: Colors.grey,
+        borderRadius: BorderRadius.circular(16 ),
       ),
-      Text('29/9/2024',style: TextStyle(color: Colors.black),),
-    ],),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+        ListTile(
+          title: Text('Flutter tips',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 26),),
+          subtitle: Padding(
+            padding: const EdgeInsets.only(top: 16,bottom: 16 ),
+            child: Text('Build your career with tharwat samy',style:TextStyle(color: Colors.black.withOpacity(0.5),fontSize: 18)),
+          ),
+          trailing: IconButton(onPressed: (){}, icon: Icon(Icons.delete,color: Colors.black,size: 30,)),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 24,bottom: 12),
+          child: Text('29/9/2024',style: TextStyle(color: Colors.black.withOpacity(0.4),fontSize: 16),),
+        ),
+      ],),
+      ),
     );
   }
 }
