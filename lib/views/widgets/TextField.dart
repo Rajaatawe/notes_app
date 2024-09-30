@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/constants.dart';
 
-class Textfield extends StatelessWidget {
-  const Textfield({super.key, required this.hint,  this.maxLines=1});
+class CustomTextfield extends StatelessWidget {
+  const CustomTextfield({super.key, required this.hint,  this.maxLines=1});
    final String hint;
    final int maxLines;
   @override
