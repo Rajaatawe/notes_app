@@ -20,8 +20,8 @@ class add_note_bottom_sheet_form extends StatefulWidget {
       _add_note_bottom_sheet_formState();
 }
 
-class _add_note_bottom_sheet_formState
-    extends State<add_note_bottom_sheet_form> {
+class _add_note_bottom_sheet_formState extends State<add_note_bottom_sheet_form> {
+
   final GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title;
@@ -64,7 +64,7 @@ class _add_note_bottom_sheet_formState
                if(formkey.currentState!.validate()){
                 formkey.currentState!.save();
                }else{
-                autovalidateMode =AutovalidateMode.always;
+               autovalidateMode =AutovalidateMode.always;
                 setState(() {
                   
                 });
