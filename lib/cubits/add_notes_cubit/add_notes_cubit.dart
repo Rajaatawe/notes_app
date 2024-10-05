@@ -9,6 +9,8 @@ class AddNotesCubit extends Cubit<AddNotesState> {
   AddNotesCubit() : super(AddNotesInitial());
 
   addNotes(NoteModel note) async {
+
+     
     emit(AddNotesLoading());
     try {
       var notesBox = Hive.box<NoteModel>(kNotesBox);
@@ -19,3 +21,4 @@ class AddNotesCubit extends Cubit<AddNotesState> {
     }
   }
 }
+

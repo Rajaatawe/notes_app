@@ -21,6 +21,7 @@ class Notes extends StatelessWidget {
     return MultiBlocProvider(
       //+
       providers: [
+        
         //+
         BlocProvider(create: (context) => AddNotesCubit()), //+
       ], //+
