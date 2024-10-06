@@ -12,7 +12,7 @@ class NotesLoading extends ReadNotesCubitState {}
 class NotesSuccess extends ReadNotesCubitState {
 final  List<NoteModel> notes;
 
-  NotesSuccess({required this.notes});
+  NotesSuccess( this.notes);
 }
 
 class NotesFailure extends ReadNotesCubitState {
