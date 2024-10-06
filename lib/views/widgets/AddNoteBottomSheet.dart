@@ -29,25 +29,26 @@ class _add_note_bottom_sheet_formState
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddNotesCubit(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: BlocConsumer<AddNotesCubit, AddNotesState>(
-          listener: (context, state) {
-            if (state is AddNotesFailure) {
-              print('Failed ${state.errorMessage}');
-            }
-            if (state is AddNotesSuccess) {
-              Navigator.pop(context);
-            }
-          },
-          builder: (context, state) {
-            //2
-            return ModalProgressHUD(
-                inAsyncCall: state is AddNotesLoading ? true : false,
-                child: const SingleChildScrollView(child: AddNoteForm()));
-          },
+      child: BlocConsumer<AddNotesCubit, AddNotesState>(
+            listener: (context, state) {
+      if(state is AddNotesFailure){
+            print('Failed ${state.errorMessage}');
+      } 
+      if (state is AddNotesSuccess){
+        Navigator.pop(context);
+      }
+            },
+            builder: (context, state) {
+      //2
+      return AbsorbPointer(
+        absorbing:state is AddNotesLoading ? true:false ,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: SingleChildScrollView(child: const AddNoteForm()),
         ),
-      ),
+      );
+            },
+          ),
     );
   }
 }
