@@ -27,26 +27,27 @@ class _add_note_bottom_sheet_formState
     extends State<add_note_bottom_sheet_form> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-          //1
-          child: BlocConsumer<AddNotesCubit, AddNotesState>(
-        listener: (context, state) {
-          if(state is AddNotesFailure){
-        print('Failed ${state.errorMessage}');
-          }
-          if (state is AddNotesSuccess){
-            Navigator.pop(context);
-          }
-        },
-        builder: (context, state) {
-          //2
-          return ModalProgressHUD(
-              inAsyncCall: state is AddNotesLoading ? true : false,
-              child: const AddNoteForm());
-        },
-      )),
+    return BlocProvider(
+      create: (context) => AddNotesCubit(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: BlocConsumer<AddNotesCubit, AddNotesState>(
+          listener: (context, state) {
+            if (state is AddNotesFailure) {
+              print('Failed ${state.errorMessage}');
+            }
+            if (state is AddNotesSuccess) {
+              Navigator.pop(context);
+            }
+          },
+          builder: (context, state) {
+            //2
+            return ModalProgressHUD(
+                inAsyncCall: state is AddNotesLoading ? true : false,
+                child: const SingleChildScrollView(child: AddNoteForm()));
+          },
+        ),
+      ),
     );
   }
 }
