@@ -5,7 +5,7 @@ abstract class NotesCubitState {}
 class NotesCubitInitial extends NotesCubitState {}
 
 class NotesInitial extends NotesCubitState {}
-
+class NotesSuccess extends NotesCubitState{}
 
 
 
