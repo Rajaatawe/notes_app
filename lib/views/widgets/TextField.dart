@@ -7,6 +7,7 @@ class CustomTextfield extends StatelessWidget {
    final int maxLines;
    final void Function(String?)? onSaved;
   @override
+
   Widget build(BuildContext context) {
     return TextFormField(
 
@@ -18,6 +19,7 @@ class CustomTextfield extends StatelessWidget {
           return null;
         }
       },
+      
 
       cursorColor: kprimaryColor,
       decoration: InputDecoration(
