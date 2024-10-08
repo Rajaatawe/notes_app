@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:note_app/cubits/notes_cubit/add_notes_cubit.dart';
@@ -46,6 +45,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
             hint: 'content',
             maxLines: 10,
+          ),
+          const SizedBox(
+            height: 32,
           ),
         const  ColorsListView(),
           const SizedBox(
